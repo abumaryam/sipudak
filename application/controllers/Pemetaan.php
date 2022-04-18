@@ -16,8 +16,8 @@ class Pemetaan extends CI_Controller
         $data['user'] = $this->db->get_where('users', ['no_hp' => $this->session->userdata('no_hp')])->row_array();
 
         $data['kecamatan'] = $this->Kecamatan_model->get_kecamatan()->result_array();
-        $data['newData'] = $this->Pemetaan_model->get_TitikBaru()->result_array();
-        $data['oldData'] = $this->Pemetaan_model->get_TitikLama()->result_array();
+        // $data['newData'] = $this->Pemetaan_model->get_TitikBaru()->result_array();
+        // $data['oldData'] = $this->Pemetaan_model->get_TitikLama()->result_array();
 
         $query = $this->db->select('*, SUM(Jlh_Kasus / Jarak) as zd, SUM(1 / Jarak) as satud, SUM(Jlh_Kasus) as jumlahkasus, kecamatan.nama_kecamatan as nama')
             ->from('titik_kecamatan')
@@ -48,6 +48,9 @@ class Pemetaan extends CI_Controller
             // die;
 
             $data['titikhitung'] = $query->result_array();
+
+            // print_r($this->input->get('cari'));
+            // die;
         }
 
 

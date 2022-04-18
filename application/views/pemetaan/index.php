@@ -60,7 +60,7 @@
 
                             <div class="card-body">
                                 <?php if (empty($titikhitung)) : ?>
-                                    <div class="alert alert-danger col-sm-12" role="alert">
+                                    <div class="alert alert-danger" role="alert">
                                         Data belum tersedia
                                     </div>
                                 <?php else : ?>
