@@ -3,29 +3,29 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Pemetaan_model extends CI_Model
 {
-    public function get_TitikBaru()
-    {
-        return $this->db->get('titik_baru');
-    }
+    // public function get_TitikBaru()
+    // {
+    //     return $this->db->get('titik_baru');
+    // }
 
-    public function get_TitikLama()
-    {
-        $query = $this->db->select('desa.* ,kasus.jumlah_kasus, tahun, desa.latitude as lat, desa.longitude as long')
-            ->from('desa')
-            ->join('kasus', 'kasus.id_desa = desa.id_desa')
-            ->get();
-        return $query;
-    }
+    // public function get_TitikLama()
+    // {
+    //     $query = $this->db->select('desa.* ,kasus.jumlah_kasus, tahun, desa.latitude as lat, desa.longitude as long')
+    //         ->from('desa')
+    //         ->join('kasus', 'kasus.id_desa = desa.id_desa')
+    //         ->get();
+    //     return $query;
+    // }
 
-    public function PetaTahun()
-    {
-        $query = $this->db->select('*, SUM(Jlh_Kasus / pow(Jarak, 3)) as zd, SUM(1 / pow(Jarak, 3)) as satud, SUM(Jlh_Kasus) as jumlahkasus, kecamatan.nama_kecamatan as nama')
-            ->from('titik_kecamatan')
-            ->join('kecamatan', 'kecamatan.id_kecamatan = titik_kecamatan.id_titik_hitung')
-            ->group_by('id_titik_hitung')
-            ->where()
-            ->get();
-    }
+    // public function PetaTahun()
+    // {
+    //     $query = $this->db->select('*, SUM(Jlh_Kasus / pow(Jarak, 3)) as zd, SUM(1 / pow(Jarak, 3)) as satud, SUM(Jlh_Kasus) as jumlahkasus, kecamatan.nama_kecamatan as nama')
+    //         ->from('titik_kecamatan')
+    //         ->join('kecamatan', 'kecamatan.id_kecamatan = titik_kecamatan.id_titik_hitung')
+    //         ->group_by('id_titik_hitung')
+    //         ->where()
+    //         ->get();
+    // }
 
     public function filterTitik($kcm_id)
     {

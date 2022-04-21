@@ -89,10 +89,10 @@ class Pemetaan extends CI_Controller
         $this->load->view('templates/footer', $data);
     }
 
-    public function PetaPerTahun()
-    {
-        $data['user'] = $this->db->get_where('users', ['no_hp' => $this->session->userdata('no_hp')])->row_array();
-    }
+    // public function PetaPerTahun()
+    // {
+    //     $data['user'] = $this->db->get_where('users', ['no_hp' => $this->session->userdata('no_hp')])->row_array();
+    // }
 
     public function hitung()
     {
