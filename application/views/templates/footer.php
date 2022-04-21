@@ -195,6 +195,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <!--end::Page Scripts-->
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
+
 
 <!-- script tombol keluar -->
 <script>
@@ -418,6 +420,190 @@
         }
     });
 </script>
+
+<script>
+    let ctx = document.getElementById('myChart').getContext('2d');
+    let myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Galing', 'Jawai', 'Jawai Selatan', 'Paloh', 'Pemangkat', 'Sajad', 'Sajingan Besar', 'Salatiga', 'Sambas', 'Sebawi', 'Sejangkung', 'Selakau', 'Selakau Timur', 'Semparuk', 'Subah', 'Tangaran', 'Tebas', 'Tekarang', 'Teluk Keramat'],
+            datasets: [{
+                label: 'Jumlah Kasus per Kecamatan',
+                data: [
+                    '<?= $galing['kasus']; ?>',
+                    '<?= $jawai['kasus']; ?>',
+                    '<?= $jawaiSelatan['kasus']; ?>',
+                    '<?= $paloh['kasus']; ?>',
+                    '<?= $pemangkat['kasus']; ?>',
+                    '<?= $sajad['kasus']; ?>',
+                    '<?= $sajinganBesar['kasus']; ?>',
+                    '<?= $salatiga['kasus']; ?>',
+                    '<?= $sambas['kasus']; ?>',
+                    '<?= $sebawi['kasus']; ?>',
+                    '<?= $sejangkung['kasus']; ?>',
+                    '<?= $selakau['kasus']; ?>',
+                    '<?= $selakauTimur['kasus']; ?>',
+                    '<?= $semparuk['kasus']; ?>',
+                    '<?= $subah['kasus']; ?>',
+                    '<?= $tangaran['kasus']; ?>',
+                    '<?= $tebas['kasus']; ?>',
+                    '<?= $tekarang['kasus']; ?>',
+                    '<?= $telukKeramat['kasus']; ?>'
+                ],
+                backgroundColor: '#F8D800',
+                borderColor: '#FDEB71',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            },
+            plugins: {
+                datalabels: {
+                    color: '#000',
+                    font: {
+                        weight: 'bold',
+                        size: '10'
+                    }
+
+                }
+            }
+        }
+    });
+</script>
+
+<script>
+    let uctx = document.getElementById('umurChart').getContext('2d');
+    let umurChart = new Chart(uctx, {
+        type: 'bar',
+        data: {
+            labels: ['0 - 5', '6 - 12', '13 - 17', '18 - 24', '25 - 44', '45 - 59', '60+'],
+            datasets: [{
+                label: 'Korban Berdasarkan Usia',
+                data: [
+                    '<?= $umur['satu']; ?> ',
+                    '<?= $umur['dua']; ?>',
+                    '<?= $umur['tiga']; ?>',
+                    '<?= $umur['empat']; ?>',
+                    '<?= $umur['lima']; ?>',
+                    '<?= $umur['enam']; ?>',
+                    '<?= $umur['tujuh']; ?>',
+                ],
+                backgroundColor: '#F8D800',
+                borderColor: '#FDEB71',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            },
+            plugins: {
+                datalabels: {
+                    color: '#000',
+                    font: {
+                        weight: 'bold',
+                        size: '10'
+                    }
+
+                }
+            }
+        }
+    });
+</script>
+
+<script>
+    let yctx = document.getElementById('youChart').getContext('2d');
+    let youChart = new Chart(yctx, {
+        type: 'bar',
+        data: {
+            labels: [<?php foreach ($bentukKekerasan as $bkk) {
+                            echo "'" . $bkk['jenis_kekerasan'] . "',";
+                        } ?>],
+            datasets: [{
+                label: 'Jenis Kekerasan yang Dialami Korban',
+                data: ['<?= $dataKekerasan['satu']; ?> ',
+                    '<?= $dataKekerasan['dua']; ?>',
+                    '<?= $dataKekerasan['tiga']; ?>',
+                    '<?= $dataKekerasan['empat']; ?>',
+                    '<?= $dataKekerasan['lima']; ?>',
+                    '<?= $dataKekerasan['enam']; ?>',
+                    '<?= $dataKekerasan['tujuh']; ?>',
+                ],
+                backgroundColor: '#F8D800',
+                borderColor: '#FDEB71',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            },
+            plugins: {
+                datalabels: {
+                    color: '#000',
+                    font: {
+                        weight: 'bold',
+                        size: '10'
+                    }
+
+                }
+            }
+        }
+    });
+</script>
+
+
+<!-- <script>
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script> -->
 
 <?php include 'map/map_kabSambas.php'; ?>
 <!-- end -->

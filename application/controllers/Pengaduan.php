@@ -13,8 +13,6 @@ class Pengaduan extends CI_Controller
 
         if (!$this->session->userdata('no_hp')) {
             redirect('auth');
-        } elseif ($this->session->userdata('role') !== 'Admin') {
-            redirect('auth/blocked');
         }
     }
 

@@ -39,8 +39,7 @@
                 <!--end::Header-->
                 <div class="col-md-3 py-7 ml-5">
                     <div class="input-icon">
-                        <input type="text" class="form-control" placeholder="Search..." name="dataTable_filter"
-                            id="dataTable_filter">
+                        <input type="text" class="form-control" placeholder="Search..." name="dataTable_filter" id="dataTable_filter">
                         <span>
                             <i class="flaticon2-search-1 text-muted"></i>
                         </span>
@@ -51,8 +50,7 @@
                 <div class="card-body py-0 col-lg">
                     <!--begin::Table-->
                     <div class="table-responsive">
-                        <table class="table table-head-custom table-head-bg table-vertical-center table-borderless"
-                            id="dataTable_filter">
+                        <table class="table table-head-custom table-head-bg table-vertical-center table-borderless" id="dataTable_filter">
                             <thead>
                                 <tr class="text-left">
                                     <th scope="col">No</th>
@@ -62,54 +60,54 @@
                                     <th scope="col">Korban Kekerasan</th>
                                     <th scope="col">Kategori Kekerasan</th>
                                     <th scope="col">Desa Kejadian</th>
-                                    <th style="min-width: 200px" class="px-10">Action</th>
+                                    <?php if ($user['role'] == 'Admin') : ?>
+                                        <th style="min-width: 200px" class="px-10">Action</th>
+                                    <?php endif; ?>
 
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php $i = 1; ?>
                                 <?php foreach ($pengaduan_kasus as $kasus) : ?>
-                                <tr>
-                                    <td>
-                                        <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                            <?= $i; ?> </span>
-                                    </td>
-                                    <td class="py-5">
-                                        <a href="<?= site_url('pengaduan/detail/') ?><?= $kasus['id_pengaduan'] ?>"><?= $kasus['no_registrasi'];  ?>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <div><?= tgl_indonesia($kasus['tanggal_pengaduan']); ?></div>
-                                    </td>
-                                    <td>
-                                        <div><?= $kasus['cara_datang'];  ?></div>
-                                    </td>
-                                    <td>
-                                        <div><?= $kasus['korban_kekerasan'];  ?></div>
-                                    </td>
-                                    <td>
-                                        <div><?= $kasus['kategori_kekerasan'];  ?></div>
-                                    </td>
-                                    <td>
-                                        <div><?= $kasus['nama_desa'];  ?>, kecamatan <?= $kasus['nama_kecamatan'];  ?>
-                                        </div>
-                                    </td>
-                                    <td class="px-10">
-                                        <a href="<?= site_url('pengaduan/editpengaduan/') ?><?= $kasus['id_pengaduan'] ?>"
-                                            class="btn btn-sm btn-icon btn-info mr-1" data-container="body"
-                                            data-toggle="popover" data-placement="top" data-content="edit">
-                                            <i class="fas fa-pen-square"></i>
-                                        </a>
-                                        <a href="<?= site_url('pengaduan/delete/') ?><?= $kasus['id_pengaduan'] ?>"
-                                            class="btn btn-sm btn-icon btn-danger tombol-hapus mr-1"
-                                            data-container="body" data-toggle="popover" data-placement="top"
-                                            data-content="hapus">
-                                            <i class="far fa-trash-alt"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <!--end::Svg Icon-->
-                                <?php $i++; ?>
+                                    <tr>
+                                        <td>
+                                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                                <?= $i; ?> </span>
+                                        </td>
+                                        <td class="py-5">
+                                            <a href="<?= site_url('pengaduan/detail/') ?><?= $kasus['id_pengaduan'] ?>"><?= $kasus['no_registrasi'];  ?>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <div><?= tgl_indonesia($kasus['tanggal_pengaduan']); ?></div>
+                                        </td>
+                                        <td>
+                                            <div><?= $kasus['cara_datang'];  ?></div>
+                                        </td>
+                                        <td>
+                                            <div><?= $kasus['korban_kekerasan'];  ?></div>
+                                        </td>
+                                        <td>
+                                            <div><?= $kasus['kategori_kekerasan'];  ?></div>
+                                        </td>
+                                        <td>
+                                            <div><?= $kasus['nama_desa'];  ?>, kecamatan <?= $kasus['nama_kecamatan'];  ?>
+                                            </div>
+                                        </td>
+                                        <?php if ($user['role'] == 'Admin') : ?>
+                                            <td class="px-10">
+                                                <a href="<?= site_url('pengaduan/editpengaduan/') ?><?= $kasus['id_pengaduan'] ?>" class="btn btn-sm btn-icon btn-info mr-1" data-container="body" data-toggle="popover" data-placement="top" data-content="edit">
+                                                    <i class="fas fa-pen-square"></i>
+                                                </a>
+                                                <a href="<?= site_url('pengaduan/delete/') ?><?= $kasus['id_pengaduan'] ?>" class="btn btn-sm btn-icon btn-danger tombol-hapus mr-1" data-container="body" data-toggle="popover" data-placement="top" data-content="hapus">
+                                                    <i class="far fa-trash-alt"></i>
+                                                </a>
+                                            </td>
+                                        <?php endif; ?>
+
+                                    </tr>
+                                    <!--end::Svg Icon-->
+                                    <?php $i++; ?>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
@@ -125,23 +123,12 @@
                                 <div class="pagging text-center">
                                     <nav>
                                         <ul class="pagination">
-                                            <li class="page-item active"><span class="page-link">1<span
-                                                        class="sr-only">(current)</span></span></li>
-                                            <li class="page-item"><span class="page-link"><a
-                                                        href="http://sidimas.ladabunpontianak.com/surat_masuk/disposisi/10"
-                                                        data-ci-pagination-page="2">2</a></span></li>
-                                            <li class="page-item"><span class="page-link"><a
-                                                        href="http://sidimas.ladabunpontianak.com/surat_masuk/disposisi/20"
-                                                        data-ci-pagination-page="3">3</a></span></li>
-                                            <li class="page-item"><span class="page-link"><a
-                                                        href="http://sidimas.ladabunpontianak.com/surat_masuk/disposisi/30"
-                                                        data-ci-pagination-page="4">4</a></span></li>
-                                            <li class="page-item"><span class="page-link"><a
-                                                        href="http://sidimas.ladabunpontianak.com/surat_masuk/disposisi/40"
-                                                        data-ci-pagination-page="5">5</a></span></li>
-                                            <li class="page-item"><span class="page-link"><a
-                                                        href="http://sidimas.ladabunpontianak.com/surat_masuk/disposisi/10"
-                                                        data-ci-pagination-page="2" rel="next">&gt;</a></span></li>
+                                            <li class="page-item active"><span class="page-link">1<span class="sr-only">(current)</span></span></li>
+                                            <li class="page-item"><span class="page-link"><a href="http://sidimas.ladabunpontianak.com/surat_masuk/disposisi/10" data-ci-pagination-page="2">2</a></span></li>
+                                            <li class="page-item"><span class="page-link"><a href="http://sidimas.ladabunpontianak.com/surat_masuk/disposisi/20" data-ci-pagination-page="3">3</a></span></li>
+                                            <li class="page-item"><span class="page-link"><a href="http://sidimas.ladabunpontianak.com/surat_masuk/disposisi/30" data-ci-pagination-page="4">4</a></span></li>
+                                            <li class="page-item"><span class="page-link"><a href="http://sidimas.ladabunpontianak.com/surat_masuk/disposisi/40" data-ci-pagination-page="5">5</a></span></li>
+                                            <li class="page-item"><span class="page-link"><a href="http://sidimas.ladabunpontianak.com/surat_masuk/disposisi/10" data-ci-pagination-page="2" rel="next">&gt;</a></span></li>
                                         </ul>
                                     </nav>
                                 </div>

@@ -9,6 +9,10 @@ class Pemetaan extends CI_Controller
         $this->load->model('permission_model');
         $this->load->model('Kecamatan_model');
         $this->load->model('Pemetaan_model');
+
+        if (!$this->session->userdata('no_hp')) {
+            redirect('auth');
+        }
     }
 
     public function index()

@@ -53,7 +53,7 @@ class Auth extends CI_Controller
                     $this->session->set_userdata($data);
                     if ($user['role'] == 'Admin') {
                         redirect('dashboard');
-                    } else {
+                    } else if ($user['role'] == 'Operator') {
                         redirect('dashboard');
                     }
                 } else {

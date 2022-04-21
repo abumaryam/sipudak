@@ -10,6 +10,8 @@ class Desa extends CI_Controller
         $this->load->model('Desa_model');
         if (!$this->session->userdata('no_hp')) {
             redirect('auth');
+        } elseif ($this->session->userdata('role') !== 'Admin') {
+            redirect('auth/blocked');
         }
     }
 
@@ -122,7 +124,7 @@ class Desa extends CI_Controller
         redirect('desa');
     }
 
-    public function search() 
+    public function search()
     {
         $data['user'] = $this->db->get_where('users', ['no_hp' => $this->session->userdata('no_hp')])->row_array();
         $keyword = $this->input->post('keyword');
@@ -131,7 +133,7 @@ class Desa extends CI_Controller
         $data['pagination'] = $this->pagination->create_links();
         // Print_r($data['desa']);
         // die;
-      
+
 
         $data['title'] = 'SIPUDAK';
         $this->load->view('templates/header', $data);
@@ -140,5 +142,4 @@ class Desa extends CI_Controller
         $this->load->view('desa/index', $data);
         $this->load->view('templates/footer', $data);
     }
-    
 }

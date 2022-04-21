@@ -122,7 +122,7 @@ class Pemetaan_model extends CI_Model
 
         if (!empty($cek_data)) {
             // update
-            $this->db->update('titik_kecamatan', ['Jlh_Kasus' => $cek_data['Jlh_Kasus'] +  $data['Jlh_Kasus']], ['id_t' => $cek_data['id_t']]);
+            $this->db->update('titik_kecamatan', ['Jlh_Kasus' => $data['Jlh_Kasus']], ['id_t' => $cek_data['id_t']]);
             // print_r('edit');
         } else {
             // tambah'
