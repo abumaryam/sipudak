@@ -139,7 +139,7 @@ class Pemetaan extends CI_Controller
 
             // var_dump($this->input->post('tahun')); die;
             $this->Pemetaan_model->tambah();
-            $this->session->set_flashdata('flash', 'Ditambahkan');
+            $this->session->set_flashdata('message', 'Ditambahkan');
             redirect('pemetaan');
         }
     }

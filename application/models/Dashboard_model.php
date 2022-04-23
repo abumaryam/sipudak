@@ -26,6 +26,13 @@ class Dashboard_model extends CI_Model
         return $query;
     }
 
+    public function get_user()
+    {
+        $query = $this->db->select('*, COUNT(id_user) as user')
+            ->from('users')->get();
+        return $query;
+    }
+
     public function get_galing()
     {
         $query = $this->db->select('COUNT(id_pengaduan) as kasus')

@@ -38,6 +38,7 @@ class Dashboard extends CI_Controller
 		$data['dataKekerasan'] = $this->Dashboard_model->get_bentukKekerasan()->row_array();
 
 		$data['umur'] = $this->Dashboard_model->get_umur()->row_array();
+		$data['user'] = $this->Dashboard_model->get_user()->row_array();
 
 		// var_dump($data['dataKekerasan']);
 		// die;

@@ -5,7 +5,7 @@
          <!--begin::Info-->
          <div class="d-flex align-items-center flex-wrap mr-2">
             <!--begin::Page Title-->
-            <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5"><?= $title; ?></h5>
+            <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Tambah Data Jumlah Kasus</h5>
             <!--end::Page Title-->
             <!--begin::Actions-->
 
@@ -27,7 +27,7 @@
                <!--begin::Card-->
                <div class="card card-custom gutter-b example example-compact">
                   <div class="card-header">
-                     <h3 class="card-title">Tambah Pelaporan</h3>
+                     <h3 class="card-title">Hitung Jumlah Kasus</h3>
 
                   </div>
 
@@ -84,38 +84,44 @@
 
                            <div class="row">
                               <div class="col-lg-6">
+
                               </div>
-                              <div class="col-lg-6 text-lg-right">
-                                 <button type="submit" class="btn btn-primary">Simpan</button>
+                              <div class="col-lg-6 text-md-right mb-4 pr-13">
+                                 <button type="submit" class="btn btn-primary">Pilih</button>
                               </div>
                            </div>
 
                         </form>
 
                         <?php if ($this->input->post('ttk_kecamatan')) : ?>
-                           <div class="form-group row">
-                              <div class="col-lg-6">
-                                 <label>Jarak:</label>
-                                 <input type="text" class="form-control" name="kecamatan" value="<?= $this->input->post('kecamatan'); ?>" placeholder="" />
-                                 <input type="text" class="form-control" name="jarak" value="<?= $jarak['Jarak']; ?>" placeholder="" />
+                           <div class="card-body">
+                              <div class="form-group row">
+                                 <div class="col-lg-6">
+                                    <label>Jarak:</label>
+                                    <input type="hidden" class="form-control" name="kecamatan" value="<?= $this->input->post('kecamatan'); ?>" placeholder="" />
+                                    <input type="text" class="form-control" name="jarak" value="<?= $jarak['Jarak']; ?>" placeholder="" />
+
+                                 </div>
+
+                                 <div class="col-lg-6">
+                                    <label>Kasus:</label>
+                                    <input type="text" class="form-control" name="kasus" value="<?= (@$kasus['j_kasus']) ? $kasus['j_kasus'] : 0; ?>" placeholder="" />
+
+                                 </div>
+
 
                               </div>
-
-                              <div class="col-lg-6">
-                                 <label>Kasus:</label>
-                                 <input type="text" class="form-control" name="kasus" value="<?= (@$kasus['j_kasus']) ? $kasus['j_kasus'] : 0; ?>" placeholder="" />
-
-                              </div>
-
                               <div class="row">
                                  <div class="col-lg-6">
+
                                  </div>
-                                 <div class="col-lg-6 text-lg-right">
-                                    <button type="submit" name="simpan" class="btn btn-primary text-lg-right">Pilih</button>
+                                 <div class="col-lg-6 text-lg-right mt-5">
+                                    <button type="submit" name="simpan" class="btn btn-primary">Simpan</button>
                                  </div>
                               </div>
+                           <?php endif; ?>
                            </div>
-                        <?php endif; ?>
+
                      </div>
                   </form>
 
