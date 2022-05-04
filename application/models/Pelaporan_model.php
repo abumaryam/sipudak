@@ -110,7 +110,12 @@ class Pelaporan_model extends CI_Model
         $this->load->library('upload', $config);
 
         if ($this->upload->do_upload('image')) {
-            return $this->upload->data("file_name");
+            $full_path = $this->upload->data('full_path');
+            $exp = explode('assets', $full_path);
+            $path = "assets{$exp[1]}";
+
+            return base_url() . $path;
+            // return $this->upload->data("file_name");
         }
 
         return "default.png";
