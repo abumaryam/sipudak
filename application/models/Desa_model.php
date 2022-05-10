@@ -53,7 +53,7 @@ class Desa_model extends CI_Model
 
         // insert ke dalam database
         $this->db->where('id_desa', $this->input->post('id_desa'));
-        $this->db->update('desa', $data,);
+        $this->db->update('desa', $data);
     }
 
     public function delete($id)
@@ -66,22 +66,22 @@ class Desa_model extends CI_Model
     public function get_keyword($keyword)
     {
         $query = $this->db->select('desa.*,nama_kecamatan')
-        ->from('desa')
-        ->join('kecamatan', 'kecamatan.id_kecamatan = desa.id_kecamatan')
-        ->like('nama_desa', $keyword)
-        ->get();
-        return $query;       
+            ->from('desa')
+            ->join('kecamatan', 'kecamatan.id_kecamatan = desa.id_kecamatan')
+            ->like('nama_desa', $keyword)
+            ->get();
+        return $query;
     }
 
     public function get_jumlah_kasus($limit, $start)
     {
         $query = $this->db->select('pengaduan_kasus.id_desa, tahun_pengaduan, count(pengaduan_kasus.id_desa) as j_kasus, kecamatan.nama_kecamatan as kecamatan, desa.nama_desa as namades, desa.longitude as long, desa.latitude as lat')
-        ->from('pengaduan_kasus')
-        ->join('desa', 'desa.id_desa = pengaduan_kasus.id_desa')
-        ->join('kecamatan', 'kecamatan.id_kecamatan = desa.id_kecamatan')
-        ->group_by('id_desa')
-        ->limit($limit, $start)
-        ->get();
+            ->from('pengaduan_kasus')
+            ->join('desa', 'desa.id_desa = pengaduan_kasus.id_desa')
+            ->join('kecamatan', 'kecamatan.id_kecamatan = desa.id_kecamatan')
+            ->group_by('id_desa')
+            ->limit($limit, $start)
+            ->get();
         return $query;
     }
 }

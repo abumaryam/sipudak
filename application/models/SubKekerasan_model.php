@@ -42,7 +42,7 @@ class SubKekerasan_model extends CI_Model
 
         // insert ke dalam database
         $this->db->where('id_sub_bentuk_kekerasan', $this->input->post('id_sub_bentuk_kekerasan'));
-        $this->db->update('sub_bentuk_kekerasan', $data,);
+        $this->db->update('sub_bentuk_kekerasan', $data);
     }
 
     public function delete($id)
