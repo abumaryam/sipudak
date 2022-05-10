@@ -37,7 +37,7 @@ class Kecamatan_model extends CI_Model
 
         // insert ke dalam database
         $this->db->where('id_kecamatan', $this->input->post('id_kecamatan'));
-        $this->db->update('kecamatan', $data,);
+        $this->db->update('kecamatan', $data);
     }
 
 
