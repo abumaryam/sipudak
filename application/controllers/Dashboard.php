@@ -25,7 +25,7 @@ class Dashboard extends CI_Controller
 		if (!$this->session->userdata('no_hp')) {
 			redirect('auth');
 		} elseif ($this->session->userdata('role') !== 'Admin' && $this->session->userdata('role') !== 'Operator') {
-			redirect('auth/blocked');
+			redirect('auth');
 		}
 	}
 
