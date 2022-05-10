@@ -28,7 +28,7 @@ class Dashboard_model extends CI_Model
 
     public function get_user()
     {
-        $query = $this->db->select('*, COUNT(id_user) as user')
+        $query = $this->db->select('*, COUNT(id_user) user')
             ->from('users')->get();
         return $query;
     }

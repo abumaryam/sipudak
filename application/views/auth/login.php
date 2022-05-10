@@ -2,8 +2,7 @@
 <div class="d-flex flex-column flex-root">
     <!--begin::Login-->
     <div class="login login-5 login-signin-on d-flex flex-row-fluid" id="kt_login">
-        <div class="d-flex flex-center bgi-size-cover bgi-no-repeat flex-row-fluid"
-            style="background-image: url(<?= base_url() ?>assets/media/bg/bg-2.jpg);">
+        <div class="d-flex flex-center bgi-size-cover bgi-no-repeat flex-row-fluid" style="background-image: url(<?= base_url() ?>assets/media/bg/bg-2.jpg);">
             <div class="login-form text-center text-white p-7 position-relative overflow-hidden">
 
                 <!--begin::Login Header-->
@@ -28,14 +27,11 @@
                     <?= $this->session->flashdata('message'); ?>
                     <form class="form" id="kt_login_signin_form" method="post" action="<?= base_url('auth') ?>">
                         <div class="form-group">
-                            <input class="form-control h-auto text-white bg-white-o-5 rounded-pill border-0 py-4 px-8"
-                                type="text" placeholder="Nomor Hp" name="no_hp" autocomplete="on"
-                                value="<?= set_value('no_hp') ?>" />
+                            <input class="form-control h-auto text-white bg-white-o-5 rounded-pill border-0 py-4 px-8" type="text" placeholder="Nomor Hp" name="no_hp" autocomplete="on" value="<?= set_value('no_hp') ?>" />
                             <?= form_error('no_hp', '<div class="fv-plugins-message-container"><div class="fv-help-block">', '</div></div>') ?>
                         </div>
                         <div class="form-group">
-                            <input class="form-control h-auto text-white bg-white-o-5 rounded-pill border-0 py-4 px-8"
-                                type="password" placeholder="Password" name="password" />
+                            <input class="form-control h-auto text-white bg-white-o-5 rounded-pill border-0 py-4 px-8" type="password" placeholder="Password" name="password" />
                             <?= form_error('password', '<div class="fv-plugins-message-container"><div class="fv-help-block">', '</div></div>') ?>
                         </div>
                         <!-- <div
@@ -49,14 +45,12 @@
                                     Password ?</a>
                             </div> -->
                         <div class="form-group text-center mt-10">
-                            <button type="submit"
-                                class="btn btn-pill btn-success font-weight-bold opacity-80 px-15 py-3">Login</button>
+                            <button type="submit" class="btn btn-pill btn-success font-weight-bold opacity-80 px-15 py-3">Login</button>
                         </div>
                     </form>
                     <div class="mt-10">
                         <span class="opacity-40 mr-4">Don't have an account yet?</span>
-                        <a href="<?= base_url() ?>auth/registration" id=""
-                            class="text-white opacity-30 font-weight-normal">Buat akun</a>
+                        <a href="<?= base_url() ?>auth/registration" id="" class="text-white opacity-30 font-weight-normal">Buat akun</a>
                     </div>
                 </div>
                 <!--end::Login Sign in form-->
