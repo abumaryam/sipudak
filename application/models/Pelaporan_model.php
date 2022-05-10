@@ -80,7 +80,7 @@ class Pelaporan_model extends CI_Model
 
         // insert ke dalam database
         $this->db->where('id_pelapor', $this->input->post('id_pelapor'));
-        $this->db->update('pelaporan', $data,);
+        $this->db->update('pelaporan', $data);
     }
 
     public function delete($id)
