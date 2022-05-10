@@ -111,7 +111,7 @@ class Person_model extends CI_Model
 
         // update ke dalam database
         $this->db->where('nik', $this->input->post('nik'));
-        $this->db->update('person', $data,);
+        $this->db->update('person', $data);
     }
 
     public function delete($nik)
