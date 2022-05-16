@@ -60,9 +60,9 @@
                                     <th scope="col">Korban Kekerasan</th>
                                     <th scope="col">Kategori Kekerasan</th>
                                     <th scope="col">Desa Kejadian</th>
-                                    <?php if ($user['role'] == 'Admin') : ?>
-                                        <th style="min-width: 200px" class="px-10">Action</th>
-                                    <?php endif; ?>
+                                    <!-- <?php if ($user['role'] == 'Admin') : ?> -->
+                                    <th style="min-width: 200px" class="px-10">Action</th>
+                                    <!-- <?php endif; ?> -->
 
                                 </tr>
                             </thead>
@@ -94,16 +94,16 @@
                                             <div><?= $kasus['nama_desa'];  ?>, kecamatan <?= $kasus['nama_kecamatan'];  ?>
                                             </div>
                                         </td>
-                                        <?php if ($user['role'] == 'Admin') : ?>
-                                            <td class="px-10">
-                                                <a href="<?= site_url('pengaduan/editpengaduan/') ?><?= $kasus['id_pengaduan'] ?>" class="btn btn-sm btn-icon btn-info mr-1" data-container="body" data-toggle="popover" data-placement="top" data-content="edit">
-                                                    <i class="fas fa-pen-square"></i>
-                                                </a>
-                                                <a href="<?= site_url('pengaduan/delete/') ?><?= $kasus['id_pengaduan'] ?>" class="btn btn-sm btn-icon btn-danger tombol-hapus mr-1" data-container="body" data-toggle="popover" data-placement="top" data-content="hapus">
-                                                    <i class="far fa-trash-alt"></i>
-                                                </a>
-                                            </td>
-                                        <?php endif; ?>
+                                        <!-- <?php if ($user['role'] == 'Admin') : ?> -->
+                                        <td class="px-10">
+                                            <a href="<?= site_url('pengaduan/editpengaduan/') ?><?= $kasus['id_pengaduan'] ?>" class="btn btn-sm btn-icon btn-info mr-1" data-container="body" data-toggle="popover" data-placement="top" data-content="edit">
+                                                <i class="fas fa-pen-square"></i>
+                                            </a>
+                                            <a href="<?= site_url('pengaduan/delete/') ?><?= $kasus['id_pengaduan'] ?>" class="btn btn-sm btn-icon btn-danger tombol-hapus mr-1" data-container="body" data-toggle="popover" data-placement="top" data-content="hapus">
+                                                <i class="far fa-trash-alt"></i>
+                                            </a>
+                                        </td>
+                                        <!-- <?php endif; ?> -->
 
                                     </tr>
                                     <!--end::Svg Icon-->

@@ -61,9 +61,9 @@
                                     <th scope="col">Tanggal Pelaporan</th>
                                     <th scope="col">Status Laporan</th>
 
-                                    <?php if ($user['role'] != 'Admin') : ?>
-                                        <th scope="col">Diterima / Ditolak/ Diproses</th>
-                                    <?php endif; ?>
+                                    <!-- <?php if ($user['role'] != 'Operator') : ?> -->
+                                    <th scope="col">Diterima / Ditolak/ Diproses</th>
+                                    <!-- <?php endif; ?> -->
                                     <th style="min-width: 210px">Action</th>
 
                                 </tr>
@@ -91,38 +91,38 @@
 
                                         </td>
 
-                                        <?php if ($user['role'] != 'Admin') : ?>
-                                            <td class="px-3 ">
-                                                <a href="<?= base_url() ?>pelaporan/updatestatus/<?= $plp['id_pelapor'] ?>/2" class="btn btn-sm btn-outline-success mr-2" data-container="body" data-toggle="popover" data-placement="top" data-content="diterima">
-                                                    <i class="flaticon2-notepad"></i>
-                                                </a>
-                                                <a href="<?= base_url() ?>pelaporan/updatestatus/<?= $plp['id_pelapor'] ?>/3" class="btn btn-sm btn-outline-danger mr-2" data-container="body" data-toggle="popover" data-placement="top" data-content="ditolak">
-                                                    <i class="flaticon2-delete"></i>
-                                                </a>
-                                                <a href="<?= base_url() ?>pelaporan/updatestatus/<?= $plp['id_pelapor'] ?>/1" class="btn btn-sm btn-outline-primary" data-container="body" data-toggle="popover" data-placement="top" data-content="diproses">
-                                                    <i class="flaticon2-document"></i>
-                                                </a>
-                                            </td>
-                                        <?php endif; ?>
+                                        <!-- <?php if ($user['role'] != 'Operator') : ?> -->
+                                        <td class="px-3 ">
+                                            <a href="<?= base_url() ?>pelaporan/updatestatus/<?= $plp['id_pelapor'] ?>/2" class="btn btn-sm btn-outline-success mr-2" data-container="body" data-toggle="popover" data-placement="top" data-content="diterima">
+                                                <i class="flaticon2-notepad"></i>
+                                            </a>
+                                            <a href="<?= base_url() ?>pelaporan/updatestatus/<?= $plp['id_pelapor'] ?>/3" class="btn btn-sm btn-outline-danger mr-2" data-container="body" data-toggle="popover" data-placement="top" data-content="ditolak">
+                                                <i class="flaticon2-delete"></i>
+                                            </a>
+                                            <a href="<?= base_url() ?>pelaporan/updatestatus/<?= $plp['id_pelapor'] ?>/1" class="btn btn-sm btn-outline-primary" data-container="body" data-toggle="popover" data-placement="top" data-content="diproses">
+                                                <i class="flaticon2-document"></i>
+                                            </a>
+                                        </td>
+                                        <!-- <?php endif; ?> -->
 
                                         <td class="py-0 ">
-                                            <?php if ($user['role'] != 'Admin') : ?>
-                                                <a href="<?= site_url('pelaporan/editpelaporan/') ?><?= $plp['id_pelapor'] ?>" class="btn btn-sm btn-icon btn-info mr-1" data-container="body" data-toggle="popover" data-placement="top" data-content="edit">
-                                                    <i class="fas fa-pen-square"></i>
-                                                </a>
-                                                <a href="<?= site_url('pelaporan/delete/') ?><?= $plp['id_pelapor'] ?>" class="btn btn-sm btn-icon btn-danger tombol-hapus mr-1" data-container="body" data-toggle="popover" data-placement="top" data-content="hapus">
-                                                    <i class="far fa-trash-alt"></i>
+                                            <!-- <?php if ($user['role'] != 'Operator') : ?> -->
+                                            <a href="<?= site_url('pelaporan/editpelaporan/') ?><?= $plp['id_pelapor'] ?>" class="btn btn-sm btn-icon btn-info mr-1" data-container="body" data-toggle="popover" data-placement="top" data-content="edit">
+                                                <i class="fas fa-pen-square"></i>
+                                            </a>
+                                            <a href="<?= site_url('pelaporan/delete/') ?><?= $plp['id_pelapor'] ?>" class="btn btn-sm btn-icon btn-danger tombol-hapus mr-1" data-container="body" data-toggle="popover" data-placement="top" data-content="hapus">
+                                                <i class="far fa-trash-alt"></i>
+                                            </a>
+                                            <!-- <?php endif; ?> -->
+
+
+                                            <!-- jika status belum diterima maka tidak bisa melakukan pengaduan -->
+                                            <?php if ($plp['id_status'] === '2') : ?>
+                                                <a href="<?= site_url('pengaduan/ajukanpengaduan/') ?><?= $plp['id_pelapor'] ?>" class="btn btn-sm btn-icon btn-primary " data-container="body" data-toggle="popover" data-placement="top" data-content="ajukan pengaduan">
+                                                    <i class="far fa-arrow-alt-circle-right"></i>
                                                 </a>
                                             <?php endif; ?>
 
-                                            <?php if ($user['role'] == 'Admin') : ?>
-                                                <!-- jika status belum diterima maka tidak bisa melakukan pengaduan -->
-                                                <?php if ($plp['id_status'] === '2') : ?>
-                                                    <a href="<?= site_url('pengaduan/ajukanpengaduan/') ?><?= $plp['id_pelapor'] ?>" class="btn btn-sm btn-icon btn-primary " data-container="body" data-toggle="popover" data-placement="top" data-content="ajukan pengaduan">
-                                                        <i class="far fa-arrow-alt-circle-right"></i>
-                                                    </a>
-                                                <?php endif; ?>
-                                            <?php endif; ?>
                                         </td>
 
                                     </tr>
