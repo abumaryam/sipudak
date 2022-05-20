@@ -219,7 +219,7 @@ class Pengaduan extends CI_Controller
         $data['agama'] = ['Islam', 'Protestan', 'Katolik', 'Hindu', 'Buddha', 'Khonghucu'];
         $data['pendidikan'] = ['SD', 'SMP', 'SMA'];
         $data['perkawinan'] = ['Belum Kawin', 'Kawin'];
-        $data['desa'] = $this->Pengaduan_model->get_desa();
+        $data['desa'] = $this->Pelaporan_model->get_desa();
         $data['laporan_kasus'] = $this->Pengaduan_model->get_detail_pengaduan($id)->row_array();
         // $data['status_person'] = ['Korban', 'Pelaku'];
 
@@ -266,7 +266,7 @@ class Pengaduan extends CI_Controller
         $data['agama'] = ['Islam', 'Protestan', 'Katolik', 'Hindu', 'Buddha', 'Khonghucu'];
         $data['pendidikan'] = ['SD', 'SMP', 'SMA'];
         $data['perkawinan'] = ['Belum Kawin', 'Kawin'];
-        $data['desa'] = $this->Pengaduan_model->get_desa();
+        $data['desa'] = $this->Pelaporan_model->get_desa();
         // $data['laporan_kasus'] = $this->Pengaduan_model->get_detail_pengaduan($id)->row_array();
         $data['korban'] = $this->Pengaduan_model->get_detail_korban($id)->row_array();
         // $data['status_person'] = ['Korban', 'Pelaku'];
@@ -315,7 +315,7 @@ class Pengaduan extends CI_Controller
         $data['kriminalitas'] = ['Pernah', 'Tidak Pernah', 'Sedang tersangkut tindak pidana'];
         $data['pendidikan'] = ['SD', 'SMP', 'SMA'];
         $data['perkawinan'] = ['Belum Kawin', 'Kawin'];
-        $data['desa'] = $this->Pengaduan_model->get_desa();
+        $data['desa'] = $this->Pelaporan_model->get_desa();
         $data['laporan_kasus'] = $this->Pengaduan_model->get_detail_pengaduan($id)->row_array();
         // $data['status_person'] = ['Korban', 'Pelaku'];
 
@@ -364,7 +364,7 @@ class Pengaduan extends CI_Controller
         $data['kriminalitas'] = ['Pernah', 'Tidak Pernah', 'Sedang tersangkut tindak pidana'];
         $data['pendidikan'] = ['SD', 'SMP', 'SMA'];
         $data['perkawinan'] = ['Belum Kawin', 'Kawin'];
-        $data['desa'] = $this->Pengaduan_model->get_desa();
+        $data['desa'] = $this->Pelaporan_model->get_desa();
         // $data['laporan_kasus'] = $this->Pengaduan_model->get_detail_pengaduan($id)->row_array();
         $data['pelaku'] = $this->Pengaduan_model->get_detail_pelaku($id)->row_array();
 
