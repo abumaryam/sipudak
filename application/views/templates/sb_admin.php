@@ -35,7 +35,7 @@
                             </svg>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-text ml-3">Kelola User</span>
+                        <span class="menu-text ml-3">Kelola Data User</span>
                     </a>
                     <!-- <div class="menu-submenu">
                         <i class="menu-arrow"></i>

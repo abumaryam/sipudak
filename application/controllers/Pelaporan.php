@@ -27,7 +27,7 @@ class Pelaporan extends CI_Controller
         // $data['desa'] = $this->Pelaporan_model->get_desa();
 
         $data['title'] = 'SIPUDAK';
-        $this->load->view('templates/header' ,$data);
+        $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar');
         $this->load->view('templates/topbar', $data);
         $this->load->view('pelaporan/index');

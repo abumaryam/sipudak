@@ -59,10 +59,10 @@
                                     <th scope="col">Nama Pelapor</th>
                                     <th scope="col">Korban Kekerasan</th>
                                     <th scope="col">Tanggal Pelaporan</th>
-                                    <th scope="col">Status Laporan</th>
+                                    <th scope="col">Keterangan</th>
 
                                     <!-- <?php if ($user['role'] != 'Operator') : ?> -->
-                                    <th scope="col">Diterima / Ditolak/ Diproses</th>
+                                    <th scope="col">Status Laporan</th>
                                     <!-- <?php endif; ?> -->
                                     <th style="min-width: 210px">Action</th>
 
@@ -92,7 +92,7 @@
                                         </td>
 
                                         <!-- <?php if ($user['role'] != 'Operator') : ?> -->
-                                        <td class="px-3 ">
+                                        <td class="px-0 ">
                                             <a href="<?= base_url() ?>pelaporan/updatestatus/<?= $plp['id_pelapor'] ?>/2" class="btn btn-sm btn-outline-success mr-2" data-container="body" data-toggle="popover" data-placement="top" data-content="diterima">
                                                 <i class="flaticon2-notepad"></i>
                                             </a>
@@ -105,7 +105,7 @@
                                         </td>
                                         <!-- <?php endif; ?> -->
 
-                                        <td class="py-0 ">
+                                        <td class="pl-5 ">
                                             <!-- <?php if ($user['role'] != 'Operator') : ?> -->
                                             <a href="<?= site_url('pelaporan/editpelaporan/') ?><?= $plp['id_pelapor'] ?>" class="btn btn-sm btn-icon btn-info mr-1" data-container="body" data-toggle="popover" data-placement="top" data-content="edit">
                                                 <i class="fas fa-pen-square"></i>
