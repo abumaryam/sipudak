@@ -41,21 +41,21 @@
                 <!-- Page Search -->
                 <!-- <div class="card-header border-0">
                 </div> -->
-                <div class="col-md-3 py-7 ml-5">
+                <!-- <div class="col-md-3 py-7 ml-5">
                     <div class="input-icon">
                         <input type="text" class="form-control" placeholder="Search..." name="dataTable_filter" id="dataTable_filter">
                         <span>
                             <i class="flaticon2-search-1 text-muted"></i>
                         </span>
                     </div>
-                </div>
+                </div> -->
                 <!--end::Header-->
 
                 <!--begin::Body-->
                 <div class="card-body py-3 col-lg">
                     <!--begin::Table-->
                     <div class="table-responsive">
-                        <table class="table table-head-custom table-head-bg table-vertical-center table-borderless" id="dataTable_filter">
+                        <table class="table table-head-custom table-head-bg table-vertical-center table-borderless" id="data-tabel">
                             <thead>
                                 <tr class="text-left">
                                     <th scope="col">No</th>
@@ -77,7 +77,7 @@
                                                 <?= $i; ?></span>
                                         </td>
                                         <td>
-                                            <img src="<?= base_url(); ?>assets/images/<?= $data['image'] ?>" width="30">
+                                            <img src="<?= base_url(); ?>assets/images/users/<?= $data['image'] ?>" width="30">
                                         </td>
                                         <td class="py-5">
                                             <a href="<?= base_url('user/detailuser/') ?><?= $data['id_user'] ?>">
@@ -116,10 +116,9 @@
                     </div>
                     <!--end::Table-->
                     <!-- buat pagination -->
-                    <div class="d-flex flex-row-fluid">
+                    <!-- <div class="d-flex flex-row-fluid">
                         <div class="row pt-5 ml-auto">
                             <div class="col">
-                                <!--Tampilkan pagination-->
                                 <div class="pagging text-center">
                                     <nav>
                                         <ul class="pagination">
@@ -134,7 +133,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <!--end::Body-->
             </div>

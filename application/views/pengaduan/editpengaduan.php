@@ -180,7 +180,7 @@
                                     <div class="col-lg-4">
                                         <label>Foto Korban:</label>
                                         <div class="col-lg-12">
-                                            <img src="<?= base_url(); ?>assets/images/<?= $pengaduan_kasus['image'] ?>" width="90" height="110" class="img-thumbnail mb-3">
+                                            <img src="<?= base_url(); ?>assets/images/korban/<?= $pengaduan_kasus['image'] ?>" width="90" height="110" class="img-thumbnail mb-3">
                                             <input type="file" class="form-control" name="image" value="<?= $pengaduan_kasus['image'] ?>" placeholder="" />
                                             <?= form_error('image', '<div class="fv-plugins-message-container"><div class="fv-help-block">', '</div></div>') ?>
                                             <!-- <span class="form-text text-muted">Please enter your contact number</span> -->

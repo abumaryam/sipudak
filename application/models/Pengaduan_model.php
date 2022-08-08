@@ -8,7 +8,7 @@ class Pengaduan_model extends CI_Model
         $query = $this->db->select('pengaduan_kasus.*, pelaporan.id_user,sub_bentuk_kekerasan.sub_jenis_kekerasan, bentuk_kekerasan.jenis_kekerasan, desa.nama_desa, kecamatan.nama_kecamatan,')
             ->from('pengaduan_kasus')
             ->join('pelaporan', 'pengaduan_kasus.id_pelapor = pelaporan.id_pelapor')
-            ->join('desa', 'pelaporan.id_desa = desa.id_desa')
+            ->join('desa', 'pengaduan_kasus.id_desa = desa.id_desa')
             ->join('kecamatan', 'desa.id_kecamatan = kecamatan.id_kecamatan')
             ->join('sub_bentuk_kekerasan', 'pengaduan_kasus.id_sub_bentuk_kekerasan = sub_bentuk_kekerasan.id_sub_bentuk_kekerasan')
             ->join('bentuk_kekerasan', 'sub_bentuk_kekerasan.id_bentuk_kekerasan = bentuk_kekerasan.id_bentuk_kekerasan')
@@ -122,28 +122,7 @@ class Pengaduan_model extends CI_Model
         return $query;
     }
 
-    // public function addpengaduan()
-    // {
-    //     $data = [
-    //         'no_registrasi' => $this->input->post('no_registrasi', true),
-    //         'tanggal_pengaduan' => $this->input->post('tanggal_pengaduan', true),
-    //         'cara_datang' => $this->input->post('cara_datang', true),
-    //         'id_pelapor' => $this->input->post('nama_pelapor', true),
-    //         'kategori_kekerasan' => $this->input->post('kategori_kekerasan', true),
-    //         'id_bentuk_kekerasan' => $this->input->post('jenis_kekerasan', true),
-    //         'id_sub_bentuk_kekerasan' => $this->input->post('sub_jenis_kekerasan', true),
-    //         'waktu_kejadian' =>  date('Y-m-d h:i:s'),
-    //         'tempat_kejadian' => $this->input->post('tempat_kejadian', true),
-    //         'kronologis_kejadian' => $this->input->post('kronologis_kejadian', true),
-    //         'tahun_pengaduan' => $this->input->post('tahun_pengaduan', true),
-    //         'image' => $this->_uploadImage(),
-    //         'longitude' => $this->input->post('longitude', true),
-    //         'latitude' => $this->input->post('latitude', true)
-    //     ];
 
-
-    //     $this->db->insert('pengaduan_kasus', $data);
-    // }
 
     public function ajukanpengaduan()
     {

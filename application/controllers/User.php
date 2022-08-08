@@ -101,6 +101,29 @@ class User extends CI_Controller
             $this->load->view('user/edituser');
             $this->load->view('templates/footer', $data);
         } else {
+
+            // cek jika ada gambar yang akan diupload
+            $upload_image = $_FILES['image']['name'];
+
+            if ($upload_image) {
+                $config['allowed_types'] = 'gif|jpg|png';
+                $config['max_size']      = '20048';
+                $config['upload_path']   = './assets/images/users/';
+
+                $this->load->library('upload', $config);
+
+                if ($this->upload->do_upload('image')) {
+                    $old_image = $data['users']['image'];
+                    if ($old_image != 'default.jpg') {
+                        unlink(FCPATH . 'assets/images/users/' . $old_image);
+                    }
+                    $new_image = $this->upload->data('file_name');
+                    $this->db->set('image', $new_image);
+                } else {
+                    echo $this->upload->display_errors();
+                }
+            }
+
             $this->User_model->edituser();
             $this->session->set_flashdata('message', 'diedit');
             redirect('user');

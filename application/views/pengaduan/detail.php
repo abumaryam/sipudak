@@ -46,7 +46,7 @@
                                             <!--end::Svg Icon-->
                                         </span>
                                     </span>
-                                    <span class="nav-text font-size-lg">Pengaduan Kasus</span>
+                                    <span class="nav-text font-size-lg">Data Pengaduan</span>
                                 </a>
                             </li>
                             <!--end::Item-->
@@ -116,14 +116,14 @@
                                     <div class="column">
                                         <div class="col-xl-4 pl-40">
                                             <div class="image-input image-input-outline" id="kt_image_1">
-                                                <div class="image-input-wrapper" style="background-image: url(<?= base_url(); ?>assets/images/<?= $pengaduan_kasus['image'] ?>)">
+                                                <div class="image-input-wrapper" style="background-image: url(<?= base_url(); ?>assets/images/korban/<?= $pengaduan_kasus['image'] ?>)">
                                                 </div>
-                                                <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Tambah foto korban">
+                                                <!-- <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="Tambah foto korban">
                                                     <i class="fa fa-pen icon-sm text-muted"></i>
                                                     <input type="file" name="profile_avatar" accept=".png, .jpg, .jpeg" />
                                                     <input type="hidden" name="profile_avatar_remove" />
 
-                                                </label>
+                                                </label> -->
                                                 <span class="form-text text-muted">Foto saat penjangkauan</span>
                                                 <!-- <span
                                                     class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow"
@@ -282,21 +282,6 @@
                                                 <input class="form-control form-control-lg form-control-solid" type="text" value="<?= $pengaduan_kasus['tahun_pengaduan'] ?>">
                                             </div>
                                         </div>
-                                        <!-- <div class="form-group row">
-                                            <label
-                                                class="col-form-label col-3 text-lg-right text-left">Longitude</label>
-                                            <div class="col-9">
-                                                <input class="form-control form-control-lg form-control-solid"
-                                                    type="text" value="<?= $pengaduan_kasus['longitude'] ?>">
-                                            </div>
-                                        </div> -->
-                                        <!-- <div class="form-group row">
-                                            <label class="col-form-label col-3 text-lg-right text-left">Latitude</label>
-                                            <div class="col-9">
-                                                <input class="form-control form-control-lg form-control-solid"
-                                                    type="text" value="<?= $pengaduan_kasus['latitude'] ?>">
-                                            </div>
-                                        </div> -->
                                         <div class="form-group row">
                                             <label class="col-form-label col-3 text-lg-right text-left">Kronologis
                                                 Kejadian</label>

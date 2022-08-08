@@ -135,14 +135,14 @@ class Pelaporan extends CI_Controller
             if ($upload_image) {
                 $config['allowed_types'] = 'gif|jpg|png';
                 $config['max_size']      = '2048';
-                $config['upload_path']   = './assets/images/';
+                $config['upload_path']   = './assets/images/korban/';
 
                 $this->load->library('upload', $config);
 
                 if ($this->upload->do_upload('image')) {
                     $old_image = $data['pelaporan']['image'];
                     if ($old_image != 'default.jpg') {
-                        unlink(FCPATH . 'assets/images/' . $old_image);
+                        unlink(FCPATH . 'assets/images/korban/' . $old_image);
                     }
                     $new_image = $this->upload->data('file_name');
                     $this->db->set('image', $new_image);

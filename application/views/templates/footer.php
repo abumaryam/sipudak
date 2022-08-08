@@ -188,6 +188,7 @@
 <script src="<?= base_url() ?>assets/js/leaflet.ajax.js"></script>
 <!--end::Page Vendors-->
 <!--begin::Page Scripts(used by this page)-->
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
 <script src="<?= base_url() ?>assets/js/pages/widgets.js"></script>
 <!-- <script src="<?= base_url() ?>assets/js/pages/myscript.js"></script> -->
 <!-- <script src="<?= base_url() ?>assets/js/pages/custom/user/list-datatable.js"></script> -->
@@ -259,6 +260,12 @@
         $("body").on("click", ".remove", function() {
             $(this).parents(".control-group").remove();
         });
+    });
+</script>
+
+<script>
+    $(document).ready(function() {
+        $('#data-tabel').DataTable();
     });
 </script>
 

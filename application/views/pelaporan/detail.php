@@ -79,7 +79,7 @@
                                             <label class="col-form-label col-3 text-lg-right text-left">Foto
                                                 Korban</label>
                                             <div class="col-9">
-                                                <img src="<?= $pelaporan['image'] ?>" width="90" height="110">
+                                                <img src="<?= base_url("assets/images/korban/") ?><?= $pelaporan['image'] ?>" width="200" height="210">
                                             </div>
                                         </div>
                                         <!--end::Group-->

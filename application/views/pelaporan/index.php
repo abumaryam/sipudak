@@ -39,23 +39,23 @@
                 <!-- <div class="card-header border-0 py-5">
                 </div> -->
                 <!--end::Header-->
-                <div class="col-md-3 py-7 ml-5">
+                <!-- <div class="col-md-3 py-7 ml-5">
                     <div class="input-icon">
                         <input type="text" class="form-control" placeholder="Search..." name="dataTable_filter" id="dataTable_filter">
                         <span>
                             <i class="flaticon2-search-1 text-muted"></i>
                         </span>
                     </div>
-                </div>
+                </div> -->
 
                 <!--begin::Body-->
                 <div class="card-body py-0 col-lg">
                     <!--begin::Table-->
                     <div class="table-responsive">
-                        <table class="table table-head-custom table-head-bg table-vertical-center table-borderless" id="dataTable_filter">
+                        <table class="table table-head-custom table-head-bg table-vertical-center table-borderless" id="data-tabel">
                             <thead>
                                 <tr class="text-left">
-                                    <th scope="col">No</th>
+                                    <th scope="col" colspan="2" class="text-center">No</th>
                                     <th scope="col">Nama Pelapor</th>
                                     <th scope="col">Korban Kekerasan</th>
                                     <th scope="col">Tanggal Pelaporan</th>
@@ -64,7 +64,7 @@
                                     <!-- <?php if ($user['role'] != 'Operator') : ?> -->
                                     <th scope="col">Status Laporan</th>
                                     <!-- <?php endif; ?> -->
-                                    <th style="min-width: 210px">Action</th>
+                                    <th style="min-width: 100px">Action</th>
 
                                 </tr>
                             </thead>
@@ -73,8 +73,15 @@
                                 <?php foreach ($pelaporan as $plp) : ?>
                                     <tr>
                                         <td>
+                                            <?php if ($plp['notifikasi'] == '0') { ?>
+                                                <span class="label label-light-danger font-weight-bold label-inline">Baru</span>
+                                            <?php } ?>
+
+                                        </td>
+                                        <td>
                                             <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
                                                 <?= $i; ?> </span>
+
                                         </td>
                                         <td class="py-5">
                                             <a href="<?= site_url('pelaporan/detail/') ?><?= $plp['id_pelapor'] ?>"><?= $plp['nama'];  ?>
@@ -87,7 +94,15 @@
                                             <div><?= tgl_indonesia($plp['tanggal_pelaporan']); ?></div>
                                         </td>
                                         <td>
-                                            <span class="label label-lg label-light-info label-inline"><?= $plp['keterangan'];  ?></span>
+                                            <?php if ($plp['keterangan'] === 'Diproses') { ?>
+                                                <span class="label label-lg label-light-info label-inline"><?= $plp['keterangan']; ?></span>
+                                            <?php } else if ($plp['keterangan'] === 'Diterima') { ?>
+                                                <span class="label label-lg label-light-success label-inline"><?= $plp['keterangan']; ?></span>
+                                            <?php } else if ($plp['keterangan'] === 'Ditolak') { ?>
+                                                <span class="label label-lg label-light-danger label-inline"><?= $plp['keterangan']; ?></span>
+                                            <?php } ?>
+
+
 
                                         </td>
 
@@ -135,10 +150,9 @@
                         <!-- buat pagination -->
 
                     </div>
-                    <div class="d-flex flex-row-fluid">
+                    <!-- <div class="d-flex flex-row-fluid">
                         <div class="row pt-5 ml-auto">
                             <div class="col">
-                                <!--Tampilkan pagination-->
                                 <div class="pagging text-center">
                                     <nav>
                                         <ul class="pagination">
@@ -153,7 +167,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
 
                     <!--end::Table-->

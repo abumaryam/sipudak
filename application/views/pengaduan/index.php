@@ -37,20 +37,20 @@
                 <!-- <div class="card-header border-0 py-5">
                 </div> -->
                 <!--end::Header-->
-                <div class="col-md-3 py-7 ml-5">
+                <!-- <div class="col-md-3 py-7 ml-5">
                     <div class="input-icon">
                         <input type="text" class="form-control" placeholder="Search..." name="dataTable_filter" id="dataTable_filter">
                         <span>
                             <i class="flaticon2-search-1 text-muted"></i>
                         </span>
                     </div>
-                </div>
+                </div> -->
 
                 <!--begin::Body-->
                 <div class="card-body py-0 col-lg">
                     <!--begin::Table-->
                     <div class="table-responsive">
-                        <table class="table table-head-custom table-head-bg table-vertical-center table-borderless" id="dataTable_filter">
+                        <table class="table table-head-custom table-head-bg table-vertical-center table-borderless" id="data-tabel">
                             <thead>
                                 <tr class="text-left">
                                     <th scope="col">No</th>
@@ -116,10 +116,9 @@
                     </div>
                     <!--end::Table-->
                     <!-- buat pagination -->
-                    <div class="d-flex flex-row-fluid">
+                    <!-- <div class="d-flex flex-row-fluid">
                         <div class="row pt-5 ml-auto">
                             <div class="col">
-                                <!--Tampilkan pagination-->
                                 <div class="pagging text-center">
                                     <nav>
                                         <ul class="pagination">
@@ -134,7 +133,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <!--end::Body-->
             </div>

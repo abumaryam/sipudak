@@ -46,7 +46,8 @@ class Pelaporan_model extends CI_Model
             'image' => $this->_uploadImage(),
             'hubungan_dengan_korban' => $this->input->post('hubungan_dengan_korban', true),
             'id_status' => 1,
-            'date_created' => date('Y-m-d H:i:s')
+            'date_created' => date('Y-m-d H:i:s'),
+            'notifikasi' => '0'
         ];
 
         // insert ke dalam database
@@ -132,7 +133,9 @@ class Pelaporan_model extends CI_Model
 
     public function get_status($id_pelapor, $id_status)
     {
-        $update_status = "UPDATE pelaporan SET id_status = '$id_status' WHERE id_pelapor = " . $id_pelapor;
+        $update_status = "UPDATE pelaporan 
+        SET id_status = '$id_status', notifikasi = '1' 
+        WHERE id_pelapor = " . $id_pelapor;
         return $this->db->query($update_status);
     }
 }
