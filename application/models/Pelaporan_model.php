@@ -102,7 +102,7 @@ class Pelaporan_model extends CI_Model
 
     private function _uploadImage()
     {
-        $config['upload_path']    = './assets/images/';
+        $config['upload_path']    = './assets/images/korban/';
         $config['allowed_types']  = 'gif|jpg|png';
         // $config['file_name']      = $this->id_pelapor;
         $config['overwrite']      = true;
@@ -115,11 +115,13 @@ class Pelaporan_model extends CI_Model
             $exp = explode('assets', $full_path);
             $path = "assets{$exp[1]}";
 
-            return base_url() . $path;
-            // return $this->upload->data("file_name");
+            // return base_url() . $path;
+            return $this->upload->data("file_name");
+        } else {
+            return 'default.png';
         }
 
-        return "default.png";
+        // return $this->upload->data('file_name');
     }
 
     private function _deleteImage($id)
