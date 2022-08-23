@@ -24,13 +24,15 @@ class Pelaporan extends CI_Controller
         $data['user'] = $this->db->get_where('users', ['no_hp' => $this->session->userdata('no_hp')])->row_array();
 
         $data['pelaporan'] = $this->Pelaporan_model->get_pelaporan();
+        // var_dump($data['pelaporan']);
+        // die;
         // $data['desa'] = $this->Pelaporan_model->get_desa();
 
         $data['title'] = 'SIPUDAK';
         $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar');
         $this->load->view('templates/topbar', $data);
-        $this->load->view('pelaporan/index');
+        $this->load->view('pelaporan/index', $data);
         $this->load->view('templates/footer');
     }
 
@@ -83,6 +85,7 @@ class Pelaporan extends CI_Controller
             $this->load->view('pelaporan/addpelaporan', $data);
             $this->load->view('templates/footer');
         } else {
+
             $this->Pelaporan_model->addpelaporan();
             $this->session->set_flashdata('message', 'ditambah');
             redirect('pelaporan');

@@ -175,6 +175,7 @@
 </script>
 <!--end::Global Config-->
 <!--begin::Global Theme Bundle(used by all pages)-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="<?= base_url() ?>assets/plugins/global/plugins.bundle.js"></script>
 <script src="<?= base_url() ?>assets/plugins/custom/prismjs/prismjs.bundle.js"></script>
 <script src="<?= base_url() ?>assets/js/scripts.bundle.js"></script>
@@ -263,7 +264,7 @@
     });
 </script>
 
-<script>
+<script type="text/javascript">
     $(document).ready(function() {
         $('#data-tabel').DataTable();
     });

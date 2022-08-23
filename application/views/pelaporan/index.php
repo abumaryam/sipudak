@@ -49,20 +49,20 @@
                 </div> -->
 
                 <!--begin::Body-->
-                <div class="card-body py-0 col-lg">
+                <div class="card-body col-lg">
                     <!--begin::Table-->
                     <div class="table-responsive">
-                        <table class="table table-head-custom table-head-bg table-vertical-center table-borderless" id="data-tabel">
+                        <table class="display" id="data-tabel">
                             <thead>
                                 <tr class="text-left">
-                                    <th scope="col" colspan="2" class="text-center">No</th>
-                                    <th scope="col">Nama Pelapor</th>
-                                    <th scope="col">Korban Kekerasan</th>
-                                    <th scope="col">Tanggal Pelaporan</th>
-                                    <th scope="col">Keterangan</th>
+                                    <th colspan="2" class="text-center">No</th>
+                                    <th>Nama Pelapor</th>
+                                    <th>Korban Kekerasan</th>
+                                    <th>Tanggal Pelaporan</th>
+                                    <th>Keterangan</th>
 
                                     <!-- <?php if ($user['role'] != 'Operator') : ?> -->
-                                    <th scope="col">Status Laporan</th>
+                                    <th>Status Laporan</th>
                                     <!-- <?php endif; ?> -->
                                     <th style="min-width: 100px">Action</th>
 
@@ -72,27 +72,30 @@
                                 <?php $i = 1; ?>
                                 <?php foreach ($pelaporan as $plp) : ?>
                                     <tr>
-                                        <td>
+                                        <td class="px-1">
                                             <?php if ($plp['notifikasi'] == '0') { ?>
                                                 <span class="label label-light-danger font-weight-bold label-inline">Baru</span>
                                             <?php } ?>
 
                                         </td>
                                         <td>
-                                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                            <span class="px-1 text-dark-75 font-weight-bolder d-block font-size-lg">
                                                 <?= $i; ?> </span>
 
                                         </td>
-                                        <td class="py-5">
+
+                                        <td>
                                             <a href="<?= site_url('pelaporan/detail/') ?><?= $plp['id_pelapor'] ?>"><?= $plp['nama'];  ?>
                                             </a>
                                         </td>
+
                                         <td>
-                                            <div><?= $plp['korban_kekerasan'];  ?></div>
+                                            <?= $plp['korban_kekerasan'];  ?>
                                         </td>
                                         <td>
-                                            <div><?= tgl_indonesia($plp['tanggal_pelaporan']); ?></div>
+                                            <?= tgl_indonesia($plp['tanggal_pelaporan']); ?>
                                         </td>
+
                                         <td>
                                             <?php if ($plp['keterangan'] === 'Diproses') { ?>
                                                 <span class="label label-lg label-light-info label-inline"><?= $plp['keterangan']; ?></span>
@@ -101,34 +104,30 @@
                                             <?php } else if ($plp['keterangan'] === 'Ditolak') { ?>
                                                 <span class="label label-lg label-light-danger label-inline"><?= $plp['keterangan']; ?></span>
                                             <?php } ?>
-
-
-
                                         </td>
 
-                                        <!-- <?php if ($user['role'] != 'Operator') : ?> -->
-                                        <td class="px-0 ">
-                                            <a href="<?= base_url() ?>pelaporan/updatestatus/<?= $plp['id_pelapor'] ?>/2" class="btn btn-sm btn-outline-success mr-2" data-container="body" data-toggle="popover" data-placement="top" data-content="diterima">
-                                                <i class="flaticon2-notepad"></i>
+
+                                        <td>
+                                            <a href="<?= base_url() ?>pelaporan/updatestatus/<?= $plp['id_pelapor'] ?>/2" class="badge badge-light" data-container="body" data-toggle="popover" data-placement="top" data-content="diterima">
+                                                <i class="flaticon2-notepad text-success"></i>
                                             </a>
-                                            <a href="<?= base_url() ?>pelaporan/updatestatus/<?= $plp['id_pelapor'] ?>/3" class="btn btn-sm btn-outline-danger mr-2" data-container="body" data-toggle="popover" data-placement="top" data-content="ditolak">
-                                                <i class="flaticon2-delete"></i>
+                                            <a href="<?= base_url() ?>pelaporan/updatestatus/<?= $plp['id_pelapor'] ?>/3" class="badge badge-light" data-container="body" data-toggle="popover" data-placement="top" data-content="ditolak">
+                                                <i class="flaticon2-delete text-danger"></i>
                                             </a>
-                                            <a href="<?= base_url() ?>pelaporan/updatestatus/<?= $plp['id_pelapor'] ?>/1" class="btn btn-sm btn-outline-primary" data-container="body" data-toggle="popover" data-placement="top" data-content="diproses">
-                                                <i class="flaticon2-document"></i>
+                                            <a href="<?= base_url() ?>pelaporan/updatestatus/<?= $plp['id_pelapor'] ?>/1" class="badge badge-light" data-container="body" data-toggle="popover" data-placement="top" data-content="diproses">
+                                                <i class="flaticon2-document text-primary"></i>
                                             </a>
                                         </td>
-                                        <!-- <?php endif; ?> -->
 
-                                        <td class="pl-5 ">
-                                            <!-- <?php if ($user['role'] != 'Operator') : ?> -->
+
+                                        <td>
+
                                             <a href="<?= site_url('pelaporan/editpelaporan/') ?><?= $plp['id_pelapor'] ?>" class="btn btn-sm btn-icon btn-info mr-1" data-container="body" data-toggle="popover" data-placement="top" data-content="edit">
                                                 <i class="fas fa-pen-square"></i>
                                             </a>
                                             <a href="<?= site_url('pelaporan/delete/') ?><?= $plp['id_pelapor'] ?>" class="btn btn-sm btn-icon btn-danger tombol-hapus mr-1" data-container="body" data-toggle="popover" data-placement="top" data-content="hapus">
                                                 <i class="far fa-trash-alt"></i>
                                             </a>
-                                            <!-- <?php endif; ?> -->
 
 
                                             <!-- jika status belum diterima maka tidak bisa melakukan pengaduan -->

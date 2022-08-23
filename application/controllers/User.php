@@ -114,10 +114,12 @@ class User extends CI_Controller
 
                 if ($this->upload->do_upload('image')) {
                     $old_image = $data['users']['image'];
-                    if ($old_image != 'default.jpg') {
+                    if ($old_image != 'default.png') {
                         unlink(FCPATH . 'assets/images/users/' . $old_image);
                     }
                     $new_image = $this->upload->data('file_name');
+
+
                     $this->db->set('image', $new_image);
                 } else {
                     echo $this->upload->display_errors();

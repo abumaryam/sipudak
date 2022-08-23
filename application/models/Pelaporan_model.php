@@ -106,7 +106,7 @@ class Pelaporan_model extends CI_Model
         $config['allowed_types']  = 'gif|jpg|png';
         // $config['file_name']      = $this->id_pelapor;
         $config['overwrite']      = true;
-        $config['max_size']       = 1024;
+        $config['max_size']       = 10024;
 
         $this->load->library('upload', $config);
 
