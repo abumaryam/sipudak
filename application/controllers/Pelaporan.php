@@ -86,6 +86,7 @@ class Pelaporan extends CI_Controller
             $this->load->view('templates/footer');
         } else {
 
+
             $this->Pelaporan_model->addpelaporan();
             $this->session->set_flashdata('message', 'ditambah');
             redirect('pelaporan');

@@ -32,6 +32,9 @@ class Pelaporan_model extends CI_Model
 
     public function addpelaporan()
     {
+
+        // var_dump($this->_uploadImage());
+        // die;
         $data = [
             // 'nama_pelapor' => $this->input->post('nama_pelapor', true),
             'id_user' => $this->input->post('id_user'),

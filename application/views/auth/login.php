@@ -25,6 +25,9 @@
                         <!-- <p class="opacity-40">Enter your details to login to your account:</p> -->
                     </div>
                     <?= $this->session->flashdata('message'); ?>
+                    <?= $this->session->flashdata('keluar'); ?>
+
+
                     <form class="form" id="kt_login_signin_form" method="post" action="<?= base_url('auth') ?>">
                         <div class="form-group">
                             <input class="form-control h-auto text-white bg-white-o-5 rounded-pill border-0 py-4 px-8" type="text" placeholder="Nomor Hp" name="no_hp" autocomplete="on" value="<?= set_value('no_hp') ?>" />
